@@ -1,0 +1,47 @@
+{% extends 'frontend/layout.html' %}
+
+{% block title %}create new product{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container mt-5">
+        <h1>เพิ่มสินค้าใหม่</h1>
+        <form method="POST" action="{% url 'productcreate' %}">
+            {% csrf_token %}
+          <div class="form-floating mb-3">
+             <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Product Name">
+             <label for="product_name">Product Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea type="text" class="form-control" name="product_detail" id="product_detail" placeholder="Product Detail" style="height: 200px;"></textarea>
+            <label for="product_detail">Product Detail</label>
+         </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="product_barcode" id="product_barcode" placeholder="Product Barcode">
+            <label for="product_barcode">Product Barcode</label>
+         </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="product_price" id="product_price" placeholder="Product Price">
+            <label for="product_price">Product Price</label>
+         </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="product_qty" id="product_qty" placeholder="Product QTY">
+            <label for="product_qty">Product QTY</label>
+         </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="product_image" id="product_image" placeholder="Product Image">
+            <label for="product_image">Product Image</label>
+         </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="product_status" id="product_status" placeholder="Product Status">
+            <label for="product_status">Product Status</label>
+         </div>
+         <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Submit">
+         </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+    
